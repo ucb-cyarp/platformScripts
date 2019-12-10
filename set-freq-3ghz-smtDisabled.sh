@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "-1" > /proc/sys/kernel/sched_rt_runtime_us
+
+systemctl stop irqbalance
+
 echo "0" > /sys/devices/system/cpu/cpufreq/boost
 
 cpufreq-set -c 0 -f 3GHz
