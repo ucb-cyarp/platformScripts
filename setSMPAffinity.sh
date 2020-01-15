@@ -3,10 +3,11 @@
 IRQ_DIR="/proc/irq"
 
 LOW_IRQ_LIMIT=20 #Only Modify IRQs from this and up
-NEW_MASK="00000000,00000000,00000000,00000003" #Mask is 1-hot encoded
+NEW_MASK="00000000,00000000,00000000,00000001" #Mask is 1-hot encoded
 
 IRQ_DIRS=`ls -A -1 ${IRQ_DIR} | sort -n` #Numeric sort is -n. -A forces . and .. to not be returned. -1 returns one file per line
 
+echo "Setting New Interrupt Masks"
 echo "Tgt Mask: ${NEW_MASK}"
 
 for dir in ${IRQ_DIRS} ; do
