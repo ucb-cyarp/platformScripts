@@ -10,3 +10,4 @@ echo "timer:itimer_state" >> /sys/kernel/debug/tracing/set_event
 echo "timer:itimer_expire" >> /sys/kernel/debug/tracing/set_event
 echo "irq:*" >> /sys/kernel/debug/tracing/set_event
 echo "workqueue:*" >> /sys/kernel/debug/tracing/set_event
+echo "sched:*" >> /sys/kernel/debug/tracing/set_event
