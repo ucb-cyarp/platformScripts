@@ -15,6 +15,7 @@ sudo ufw allow from 192.58.221.0/24 to any port 22 proto tcp
 sudo ufw allow from 192.101.42.0/24 to any port 22 proto tcp
 sudo ufw allow from 192.107.102.0/24 to any port 22 proto tcp
 sudo ufw allow from 10.0.0.0/8 to any port 22 proto tcp
+sudo ufw allow from 192.168.2.0/24 to any port 22 proto tcp
 
 #disallow other ssh (put rule after allows)
 sudo ufw deny 22
