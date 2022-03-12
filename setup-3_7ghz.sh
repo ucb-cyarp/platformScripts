@@ -7,7 +7,6 @@
 #./setupUSRPNetworking.sh
 
 #Next, set the CPU frequencies and scheduling properties
-#./set-freq-3ghz-smtDisabled.sh
 ./set-freq-3_7ghz.sh
 
 #Next, offload interrupts to CPU0 where possible

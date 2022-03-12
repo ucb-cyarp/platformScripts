@@ -7,30 +7,15 @@ GRUB_DEFAULT=0
 GRUB_TIMEOUT_STYLE=hidden
 GRUB_TIMEOUT=2
 GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1 isolcpus=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31"
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1 acpi_irq_nobalance noirqbalance isolcpus=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31"
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1 acpi_irq_nobalance noirqbalance nohz_full=1-31 isolcpus=1-31"
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1 acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 nohz nohz_full=1-31 isolcpus=domain,nohz,1-31"
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1 acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 nohz nohz_full=1-31 isolcpus=1-31"
-#GRUB_CMDLINE_LINUX_DEFAULT="acpi_irq_nobalance noirqbalance isolcpus=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31"
-#GRUB_CMDLINE_LINUX_DEFAULT="isolcpus=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31"
-#GRUB_CMDLINE_LINUX_DEFAULT="isolcpus=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63"
-
-#Current Command Line of Choice
-GRUB_CMDLINE_LINUX_DEFAULT="acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 rcu_nocbs=1-31 nohz_full=1-31 isolcpus=1-31" #nohz_full implies rcu_nocbs so its inclusion here is redundant but not harmful
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1 acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 nohz_full=1-31 isolcpus=1-31"
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1 acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 nohz nohz_full=1-31 isolcpus=1-31"
-
-#Disable NO_HZ
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1 acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 isolcpus=1-31"
-
-#Disable NO_HZ Enable RCU Offloading
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1 acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 rcu_nocbs=1-31 isolcpus=1-31"
-
-#Stock Boot Config (with Intel SFP Override)
-#GRUB_CMDLINE_LINUX_DEFAULT="ixgbe.allow_unsupported_sfp=1"
-
 GRUB_CMDLINE_LINUX=""
+
+#GRUB_CMDLINE_LINUX_DEFAULT=""
+#Ryzen 3970X SMT Disabled - Isolate Cores Over 0
+GRUB_CMDLINE_LINUX_DEFAULT="acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 rcu_nocbs=1-31 nohz_full=1-31 isolcpus=1-31"
+#Ryzen 3970X SMT Enabled - Isolate Cores Over 0 (Logicsl CPUs 0)
+#GRUB_CMDLINE_LINUX_DEFAULT="acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 rcu_nocbs=1-63 nohz_full=1-63 isolcpus=1-63"
+#Epyc 7002 
+#GRUB_CMDLINE_LINUX_DEFAULT="acpi_irq_nobalance noirqbalance irqaffinity=0 nosoftlockup nmi_watchdog=0 rcu_nocbs=1-63 nohz_full=1-63 isolcpus=1-63"
 
 # Uncomment to enable BadRAM filtering, modify to suit your needs
 # This works with Linux (no patch required) and with any kernel that obtains
