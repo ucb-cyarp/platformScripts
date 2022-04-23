@@ -15,3 +15,17 @@ Please modify the script called by the systemd service, [setup.sh](setup.sh), al
   - To enable the service to run at system statup, execute `sudo systemctl enable setupCPUForDSP`
   - To disable the service from running at system statup, execute `sudo systemctl disable setupCPUForDSP`
   - To check the logs of the service, execute `journalctl -u setupCPUForDSP` 
+
+## Citing This Software:
+If you would like to reference this software, please cite Christopher Yarp's Ph.D. thesis.
+
+*At the time of writing, the GitHub CFF parser does not properly generate thesis citations.  Please see the bibtex entry below.*
+
+```bibtex
+@phdthesis{yarp_phd_2022,
+	title = {High Speed Software Radio on General Purpose CPUs},
+	school = {University of California, Berkeley},
+	author = {Yarp, Christopher},
+	year = {2022},
+}
+```
