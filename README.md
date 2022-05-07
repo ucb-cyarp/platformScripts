@@ -1,4 +1,6 @@
 # platformScripts
+Zenodo Concept DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6526467.svg)](https://doi.org/10.5281/zenodo.6526467)
+
 Scripts for Setting Up or Interacting with CPU Platforms
 
 ## Setup
